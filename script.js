@@ -76,37 +76,71 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// STAGE ACCORDION INTERACTION
+// ACCORDION MANAGEMENT (FIXED)
 // ============================================
 
-document.querySelectorAll('.stage-header').forEach(header => {
-    header.addEventListener('click', function() {
-        const targetId = this.getAttribute('data-bs-target');
-        const target = document.querySelector(targetId);
+function initializeAccordions() {
+    const stageHeaders = document.querySelectorAll('.stage-header');
+    
+    stageHeaders.forEach((header, index) => {
+        const targetId = header.getAttribute('data-bs-target');
+        const targetContent = document.querySelector(targetId);
         
-        if (target) {
-            const isCollapsed = target.classList.contains('show');
+        if (!targetContent) return;
+        
+        // Add click event listener
+        header.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             
-            // Close all other stages
-            document.querySelectorAll('.stage-content').forEach(content => {
-                if (content !== target) {
-                    content.classList.remove('show');
-                    const btn = content.previousElementSibling;
-                    if (btn) btn.classList.add('collapsed');
+            const isExpanded = targetContent.classList.contains('show');
+            
+            // Close all other accordions
+            stageHeaders.forEach((otherHeader, otherIndex) => {
+                if (otherIndex !== index) {
+                    const otherTargetId = otherHeader.getAttribute('data-bs-target');
+                    const otherContent = document.querySelector(otherTargetId);
+                    
+                    if (otherContent) {
+                        otherContent.classList.remove('show');
+                        otherHeader.classList.add('collapsed');
+                        
+                        // Update icon
+                        const icon = otherHeader.querySelector('.toggle-icon');
+                        if (icon) {
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
                 }
             });
             
-            // Toggle current stage
-            if (isCollapsed) {
-                target.classList.remove('show');
-                this.classList.add('collapsed');
+            // Toggle current accordion
+            if (isExpanded) {
+                // Close
+                targetContent.classList.remove('show');
+                header.classList.add('collapsed');
+                
+                const icon = header.querySelector('.toggle-icon');
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg)';
+                }
             } else {
-                target.classList.add('show');
-                this.classList.remove('collapsed');
+                // Open
+                targetContent.classList.add('show');
+                header.classList.remove('collapsed');
+                
+                const icon = header.querySelector('.toggle-icon');
+                if (icon) {
+                    icon.style.transform = 'rotate(180deg)';
+                }
             }
-        }
+        });
+        
+        // Initialize state
+        header.classList.add('collapsed');
+        targetContent.classList.remove('show');
     });
-});
+}
 
 // ============================================
 // SCROLL ANIMATIONS
