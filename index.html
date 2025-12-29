@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل الإقفالات السنوية - نظام المتكامل بلس ERP</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="fas fa-lock-open"></i> الإقفالات السنوية
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#preparation">التحضيرات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#process">المراحل</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#systems">الأنظمة المرتبطة</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-sm btn-outline-light theme-toggle ms-2" id="themeToggle">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-3">
+                            <span class="text-gradient">دليل شامل للإقفالات السنوية</span>
+                        </h1>
+                        <p class="lead mb-4">
+                            شرح تفصيلي وعملي لعملية الإقفال السنوي على نظام <strong>المتكامل بلس ERP v6</strong>
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#preparation" class="btn btn-primary btn-lg me-3 mb-2">
+                                <i class="fas fa-play-circle"></i> ابدأ الآن
+                            </a>
+                            <a href="#process" class="btn btn-outline-primary btn-lg mb-2">
+                                <i class="fas fa-book"></i> اقرأ المزيد
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="intro-card p-5 rounded-4">
+                        <h2 class="mb-4 text-center">
+                            <i class="fas fa-info-circle text-primary"></i> مقدمة
+                        </h2>
+                        <p class="text-justify">
+                            تعتبر عملية الإقفال السنوي في نظام المتكامل بلس عملية متكاملة تضمن انتقال البيانات المالية والمخزنية من سنة إلى أخرى بدقة متناهية. يعتمد النظام على "معالج الإقفال السنوي" الذي يقود المستخدم عبر خطوات متسلسلة ومترابطة. هذا الدليل يوفر شرحاً تفصيلياً لكل مرحلة من مراحل الإقفال، مع التركيز على الرقابات الآلية والتحققات الضرورية لضمان سلامة البيانات.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preparation Section -->
+    <section id="preparation" class="preparation-section py-5">
+        <div class="container">
+            <h2 class="section-title mb-5">
+                <i class="fas fa-clipboard-check"></i> الأجندة التحضيرية للإقفال
+            </h2>
+            
+            <div class="row g-4">
+                <!-- Financial Checks -->
+                <div class="col-lg-6">
+                    <div class="prep-card h-100 p-4 rounded-3">
+                        <h4 class="mb-4">
+                            <i class="fas fa-calculator text-primary"></i> التحقق المالي والمحاسبي
+                        </h4>
+                        <div class="check-list">
+                            <div class="check-item mb-3">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div>
+                                    <strong>اكتمال المدخلات:</strong>
+                                    <p>التأكد من إدخال وترحيل كافة العمليات المالية للسنة الجارية.</p>
+                                </div>
+                            </div>
+                            <div class="check-item mb-3">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div>
+                                    <strong>التسويات الدورية:</strong>
+                                    <p>إتمام كافة تسويات الجرد، تسويات البنوك، ومطابقة كشوفات الحسابات.</p>
+                                </div>
+                            </div>
+                            <div class="check-item mb-3">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div>
+                                    <strong>ميزان المراجعة:</strong>
+                                    <p>يجب أن يكون ميزان المراجعة متزناً تماماً، وخالياً من أي أرصدة افتتاحية معلقة.</p>
+                                </div>
+                            </div>
+                            <div class="check-item mb-3">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div>
+                                    <strong>الحسابات الوسيطة:</strong>
+                                    <p>ضرورة إقفال كافة الحسابات الوسيطة (مثل حسابات فروق العملة) لضمان عدم ترحيل أرصدة غير حقيقية.</p>
+                                </div>
+                            </div>
+                            <div class="check-item">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div>
+                                    <strong>المصاريف والإيرادات المؤجلة:</strong>
+                                    <p>مراجعة قيود التسوية للمصاريف المدفوعة مقدماً والإيرادات المستحقة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Checks -->
+                <div class="col-lg-6">
+                    <div class="prep-card h-100 p-4 rounded-3">
+                        <h4 class="mb-4">
+                            <i class="fas fa-boxes text-primary"></i> التحقق المخزني
+                        </h4>
+                        <div class="check-list">
+                            <div class="check-item mb-3">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div>
+                                    <strong>الجرد الفعلي:</strong>
+                                    <p>مطابقة الكميات الفعلية في المستودعات مع الكميات الدفترية في النظام.</p>
+                                </div>
+                            </div>
+                            <div class="check-item mb-3">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div>
+                                    <strong>تكاليف الأصناف:</strong>
+                                    <p>مراجعة تكلفة المخزون والتأكد من عدم وجود أصناف بتكاليف صفرية أو سالبة.</p>
+                                </div>
+                            </div>
+                            <div class="check-item">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <div>
+                                    <strong>مطابقة الأستاذ العام:</strong>
+                                    <p>التأكد من تطابق رصيد حساب المخزون في الأستاذ العام مع إجمالي قيمة المخزون في نظام المستودعات.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process-section py-5">
+        <div class="container">
+            <h2 class="section-title mb-5">
+                <i class="fas fa-cogs"></i> المعالج الآلي للإقفال
+            </h2>
+
+            <div class="alert alert-info alert-dismissible fade show mb-5" role="alert">
+                <i class="fas fa-lightbulb"></i> <strong>ملاحظة مهمة:</strong> يتم الوصول إلى معالج الإقفال عبر المسار: <code>إدارة النظام > الإقفالات > معالج الإقفال السنوي</code>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+
+            <!-- Stage 1 -->
+            <div class="stage-container mb-5">
+                <div class="stage-header p-4 rounded-3 cursor-pointer" data-bs-toggle="collapse" data-bs-target="#stage1">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <div class="stage-number">1</div>
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-0">الإقفال الشهري التراكمي</h4>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse" id="stage1">
+                    <div class="stage-content p-4">
+                        <p>تظهر شاشة "الإقفال الشهري" وتتضمن الخيارات التالية:</p>
+                        
+                        <div class="feature-box mb-4">
+                            <h6><i class="fas fa-calendar-alt"></i> تحديد الفترة</h6>
+                            <p>اختيار الشهر والسنة المراد إقفالهما من قوائم منسدلة مخصصة.</p>
+                        </div>
+
+                        <div class="feature-box mb-4">
+                            <h6><i class="fas fa-sliders-h"></i> خيارات الإقفال</h6>
+                            <p>يوفر النظام عدة خيارات:</p>
+                            <ul>
+                                <li>عكس القيود العكسية (للعمليات المرتجعة)</li>
+                                <li>إقفال فروق العملة للحسابات الأجنبية</li>
+                                <li>إقفال فروق العملة للحسابات الأجنبية ذات الأرصدة الصغيرة</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-box mb-4">
+                            <h6><i class="fas fa-list"></i> تبويبات التحقق</h6>
+                            <p><strong>الحسابات الأجنبية:</strong> يعرض متوسط أسعار الصرف للعملات الأجنبية بناءً على الحركات الفعلية.</p>
+                            <p><strong>العمليات المعلقة:</strong> يعرض العمليات التي لها ارتباطات بعمليات أخرى ولم تنفذ بعد (مثل فواتير مبيعات لم يصدر لها أمر صرف).</p>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle"></i> <strong>الرقابة الآلية:</strong> في حال عدم اتزان الأرصدة الافتتاحية، يظهر النظام رسالة تنبيهية تمنع الإقفال حتى يتم تصحيح الخلل.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="stage-container mb-5">
+                <div class="stage-header p-4 rounded-3 cursor-pointer" data-bs-toggle="collapse" data-bs-target="#stage2">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <div class="stage-number">2</div>
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-0">نقل البيانات وفتح السنة الجديدة</h4>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse" id="stage2">
+                    <div class="stage-content p-4">
+                        <p>بعد إقفال كافة أشهر السنة، ينتقل المعالج إلى شاشة "نقل البيانات":</p>
+                        
+                        <div class="feature-box mb-4">
+                            <h6><i class="fas fa-exchange-alt"></i> نقل المدخلات</h6>
+                            <p>يقوم النظام بنقل (الحسابات، العملاء، الموردين، الأصناف) بدون أرصدة، مع نقل كافة الصلاحيات وهيكلية النظام.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <h6><i class="fas fa-door-open"></i> فتح السنة</h6>
+                            <p>يتم تحديد السنة الجديدة (مثلاً 2025) وتاريخ بدايتها. تظهر رسالة تأكيد <strong>"تم فتح سنة جديدة بنجاح"</strong> ويتم الخروج من المعالج آلياً لإعادة الدخول في السنة الجديدة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="stage-container mb-5">
+                <div class="stage-header p-4 rounded-3 cursor-pointer" data-bs-toggle="collapse" data-bs-target="#stage3">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <div class="stage-number">3</div>
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-0">إقفال الأرباح والخسائر</h4>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse" id="stage3">
+                    <div class="stage-content p-4">
+                        <p>في هذه المرحلة، يتم تصفير الحسابات المؤقتة:</p>
+                        
+                        <div class="feature-box mb-4">
+                            <h6><i class="fas fa-file-invoice"></i> تحديد حساب الإقفال</h6>
+                            <p>يطلب النظام تحديد رقم حساب (أرباح وخسائر العام) أو (الأرباح المحتجزة) لترحيل الفائض أو العجز.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <h6><i class="fas fa-cogs"></i> التنفيذ الآلي</h6>
+                            <p>يقوم النظام آلياً بإنشاء قيد إقفال لكافة حسابات الإيرادات والمصروفات وترحيل الصافي إلى الحساب المحدد. هذا يضمن تصفير كامل لحسابات الدخل.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="stage-container mb-5">
+                <div class="stage-header p-4 rounded-3 cursor-pointer" data-bs-toggle="collapse" data-bs-target="#stage4">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <div class="stage-number">4</div>
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-0">نقل أرصدة المخزون والشيكات</h4>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse" id="stage4">
+                    <div class="stage-content p-4">
+                        <div class="feature-box mb-4">
+                            <h6><i class="fas fa-warehouse"></i> آلية نقل المخزون</h6>
+                            <p>يتيح النظام خيارين لنقل المخزون:</p>
+                            <ul>
+                                <li><strong>نقل الأرصدة فقط:</strong> نقل الكميات والأرصدة دون تغيير التكاليف</li>
+                                <li><strong>نقل الأرصدة مع التكاليف:</strong> نقل الكميات والأرصدة مع إعادة حساب التكاليف</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-box">
+                            <h6><i class="fas fa-check-square"></i> الشيكات المستحقة</h6>
+                            <p>يتم ترحيل الشيكات التي لم يحن موعد استحقاقها بعد لتظهر في السنة الجديدة كالتزامات أو أصول متداولة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="stage-container mb-5">
+                <div class="stage-header p-4 rounded-3 cursor-pointer" data-bs-toggle="collapse" data-bs-target="#stage5">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <div class="stage-number">5</div>
+                        </div>
+                        <div class="col">
+                            <h4 class="mb-0">الإقفال النهائي للأرصدة</h4>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="collapse" id="stage5">
+                    <div class="stage-content p-4">
+                        <div class="feature-box mb-4">
+                            <h6><i class="fas fa-balance-scale"></i> نقل أرصدة الميزانية</h6>
+                            <p>يتم نقل أرصدة الحسابات الحقيقية (الأصول، الخصوم، حقوق الملكية) كأرصدة افتتاحية للسنة الجديدة.</p>
+                        </div>
+
+                        <div class="feature-box">
+                            <h6><i class="fas fa-link"></i> الربط المالي</h6>
+                            <p>يضمن النظام أن الرصيد الختامي في 31/12 هو الرصيد الافتتاحي في 01/01، مما يحافظ على استمرارية البيانات المالية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cancellation Section -->
+    <section class="cancellation-section py-5">
+        <div class="container">
+            <h2 class="section-title mb-5">
+                <i class="fas fa-undo"></i> إلغاء الإقفال السنوي
+            </h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="cancellation-card p-5 rounded-4">
+                        <p class="mb-4">يوفر النظام شاشة "إلغاء الإقفال السنوي" للحالات الطارئة، ولكن بشروط صارمة:</p>
+                        <div class="conditions">
+                            <div class="condition-item mb-3">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span><strong>عدم وجود حركة:</strong> يجب ألا تكون قد تمت أي حركة مخزنية أو مالية في السنة الجديدة.</span>
+                            </div>
+                            <div class="condition-item mb-3">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span><strong>حالة الأشهر:</strong> يجب أن تكون الأشهر في السنة الجديدة غير مقفلة.</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-check-circle text-success"></i>
+                                <span><strong>صلاحيات المستخدم:</strong> هذه العملية محصورة بالمستخدم رقم (1) فقط (Super User).</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Systems Section -->
+    <section id="systems" class="systems-section py-5">
+        <div class="container">
+            <h2 class="section-title mb-5">
+                <i class="fas fa-network-wired"></i> إقفال الأنظمة المرتبطة
+            </h2>
+
+            <p class="text-center mb-5 lead">لا يقتصر الإقفال على المحاسبة والمخازن، بل يمتد ليشمل الأنظمة الأخرى المتكاملة:</p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="system-card p-4 rounded-3 h-100">
+                        <div class="system-icon mb-3">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h5>نظام الموارد البشرية</h5>
+                        <p>نقل أرصدة الإجازات المتبقية، السلف المستحقة، وتحديث بيانات الموظفين للسنة الجديدة.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="system-card p-4 rounded-3 h-100">
+                        <div class="system-icon mb-3">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h5>نظام الأصول الثابتة</h5>
+                        <p>ترحيل قيم الأصول الصافية بعد احتساب الإهلاك السنوي وتحديثها للسنة الجديدة.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="system-card p-4 rounded-3 h-100">
+                        <div class="system-icon mb-3">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h5>نظام الحوالات والصرافة</h5>
+                        <p>ترحيل أرصدة الوكلاء والعملات الأجنبية وإعادة ترقيم الحوالات لتبدأ من رقم (1).</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="system-card p-4 rounded-3 h-100">
+                        <div class="system-icon mb-3">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>نظام الحضور والانصراف</h5>
+                        <p>تصفير سجلات الحضور اليومي وتهيئتها للعام الجديد مع الاحتفاظ بالبيانات التاريخية.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Notes Section -->
+    <section class="notes-section py-5">
+        <div class="container">
+            <h2 class="section-title mb-5">
+                <i class="fas fa-bell"></i> ملاحظات هامة
+            </h2>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="note-card p-4 rounded-3">
+                        <h5 class="mb-3">
+                            <i class="fas fa-user-shield"></i> متطلبات الصلاحيات
+                        </h5>
+                        <p>يجب أن يكون المستخدم الذي يقوم بالإقفال هو <strong>المستخدم رقم 1 (سوبر)</strong> في إدارة النظام. هذا يضمن أن العملية تتم من قبل شخص مخول بصلاحيات كاملة.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="note-card p-4 rounded-3">
+                        <h5 class="mb-3">
+                            <i class="fas fa-backup"></i> النسخ الاحتياطية
+                        </h5>
+                        <p>يجب إجراء <strong>نسخة احتياطية كاملة</strong> قبل بدء عملية الإقفال السنوي. هذا يضمن إمكانية استرجاع البيانات في حالة حدوث أي مشكلة.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="note-card p-4 rounded-3">
+                        <h5 class="mb-3">
+                            <i class="fas fa-database"></i> البنية التقنية
+                        </h5>
+                        <p>يعتمد نظام المتكامل بلس على قاعدة بيانات SQL Server، وتتم كافة عمليات الإقفال من خلال إجراءات مخزنة (Stored Procedures) تضمن سلامة البيانات وعدم فقدانها.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="note-card p-4 rounded-3">
+                        <h5 class="mb-3">
+                            <i class="fas fa-hourglass-end"></i> التوقيت المناسب
+                        </h5>
+                        <p>يفضل إجراء الإقفال في وقت لا يوجد فيه عمليات أخرى جارية في النظام، مثل نهاية اليوم العملي أو في أيام العطل.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">عن الدليل</h6>
+                    <p>دليل شامل وتفصيلي لعملية الإقفالات السنوية على نظام المتكامل بلس ERP v6. يتضمن شرحاً نصياً عميقاً لكل مرحلة من مراحل الإقفال مع التركيز على الرقابات الآلية والتحققات الضرورية.</p>
+                </div>
+                <div class="col-md-6">
+                    <h6 class="fw-bold mb-3">معلومات إضافية</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#preparation">التحضيرات</a></li>
+                        <li><a href="#process">المراحل</a></li>
+                        <li><a href="#systems">الأنظمة المرتبطة</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 دليل الإقفالات السنوية - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
