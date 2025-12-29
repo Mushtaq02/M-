@@ -75,8 +75,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+
 // ============================================
-// ACCORDION MANAGEMENT (FIXED)
+// ACCORDION MANAGEMENT - FULLY WORKING
 // ============================================
 
 function initializeAccordions() {
@@ -88,59 +89,62 @@ function initializeAccordions() {
         
         if (!targetContent) return;
         
+        // Initialize state
+        header.classList.add('collapsed');
+        targetContent.classList.remove('show');
+        
         // Add click event listener
         header.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
-            const isExpanded = targetContent.classList.contains('show');
+            const isCurrentlyExpanded = targetContent.classList.contains('show');
             
-            // Close all other accordions
+            // Close all accordions
             stageHeaders.forEach((otherHeader, otherIndex) => {
-                if (otherIndex !== index) {
-                    const otherTargetId = otherHeader.getAttribute('data-bs-target');
-                    const otherContent = document.querySelector(otherTargetId);
+                const otherTargetId = otherHeader.getAttribute('data-bs-target');
+                const otherContent = document.querySelector(otherTargetId);
+                
+                if (otherContent) {
+                    otherContent.classList.remove('show');
+                    otherHeader.classList.add('collapsed');
                     
-                    if (otherContent) {
-                        otherContent.classList.remove('show');
-                        otherHeader.classList.add('collapsed');
-                        
-                        // Update icon
-                        const icon = otherHeader.querySelector('.toggle-icon');
-                        if (icon) {
-                            icon.style.transform = 'rotate(0deg)';
-                        }
+                    // Reset icon rotation
+                    const otherIcon = otherHeader.querySelector('.toggle-icon');
+                    if (otherIcon) {
+                        otherIcon.style.transform = 'rotate(0deg)';
                     }
                 }
             });
             
-            // Toggle current accordion
-            if (isExpanded) {
-                // Close
-                targetContent.classList.remove('show');
-                header.classList.add('collapsed');
-                
-                const icon = header.querySelector('.toggle-icon');
-                if (icon) {
-                    icon.style.transform = 'rotate(0deg)';
-                }
-            } else {
-                // Open
+            // Toggle current accordion only if it wasn't already expanded
+            if (!isCurrentlyExpanded) {
+                // Open the current accordion
                 targetContent.classList.add('show');
                 header.classList.remove('collapsed');
                 
+                // Rotate icon
                 const icon = header.querySelector('.toggle-icon');
                 if (icon) {
                     icon.style.transform = 'rotate(180deg)';
                 }
+            } else {
+                // Close the current accordion (already closed by the loop above)
+                // Just ensure the icon is rotated back
+                const icon = header.querySelector('.toggle-icon');
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg)';
+                }
             }
         });
-        
-        // Initialize state
-        header.classList.add('collapsed');
-        targetContent.classList.remove('show');
     });
 }
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initializeAccordions();
+});
+
 
 // ============================================
 // SCROLL ANIMATIONS
